@@ -32,7 +32,9 @@ class BinaryFirstBadVersionFinder extends BadVersionAPI implements
 
   private int findFirstBadVersion(int leftIndex, int rightIndex) {
 
-    int currentVersion = (int) Math.ceil((leftIndex + rightIndex) / 2.0);
+    // Don't use currentVersion = (leftIndex + rightIndex) / 2 to avoid stack overflow
+    // See https://en.wikipedia.org/wiki/Binary_search_algorithm#Implementation_issues
+    int currentVersion = (int) Math.ceil(leftIndex + ((rightIndex - leftIndex) / 2.0));
 
     if (isBadVersion(currentVersion) && !isBadVersion(currentVersion - 1)) {
 

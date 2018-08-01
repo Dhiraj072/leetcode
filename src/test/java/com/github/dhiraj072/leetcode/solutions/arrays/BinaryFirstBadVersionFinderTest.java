@@ -47,8 +47,7 @@ public class BinaryFirstBadVersionFinderTest {
     assertEquals(170276671, finder.firstBadVersion(212675339));
   }
 
-  // TODO FIXME
-  @Ignore
+  @Test
   public void testBadVersionBigger() {
 
     finder = new BinaryFirstBadVersionFinder(1702766719);
