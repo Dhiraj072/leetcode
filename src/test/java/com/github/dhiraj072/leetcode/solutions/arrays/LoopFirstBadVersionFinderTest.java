@@ -31,5 +31,12 @@ public class LoopFirstBadVersionFinderTest {
     finder = new LoopFirstBadVersionFinder(10);
     assertEquals(10, finder.firstBadVersion(10));
   }
+
+  @Test
+  public void testBadVersionBig() {
+
+    finder = new LoopFirstBadVersionFinder(100);
+    assertEquals(100, finder.firstBadVersion(100000));
+  }
 }
 
