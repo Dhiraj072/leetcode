@@ -1,6 +1,19 @@
 package com.github.dhiraj072.leetcode.solutions.arrays;
 
-public interface ArrayRotator {
+import static java.lang.Math.abs;
 
-  int[] rotate(int arr[], int steps);
+public abstract class ArrayRotator {
+
+  abstract int[] rotate(int arr[], int steps);
+
+  /**
+   *
+   * @param m - number to return modulus for
+   * @param n
+   * @return m mod(n)
+   */
+  int mod(int m, int n) {
+
+    return abs(m) < abs(n) ? abs(m) : abs(m) % abs(n);
+  }
 }

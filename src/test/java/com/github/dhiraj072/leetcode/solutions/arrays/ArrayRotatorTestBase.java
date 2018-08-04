@@ -3,7 +3,6 @@ package com.github.dhiraj072.leetcode.solutions.arrays;
 import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public abstract class ArrayRotatorTestBase {
@@ -54,8 +53,17 @@ public abstract class ArrayRotatorTestBase {
     assertArrayEquals(expectedArr, result);
   }
 
-  // TODO FIXME gives out of bounds expception
-  @Ignore
+  @Test
+  public void rotateStepExceedsArrayLength() {
+
+    int[] arr = {1, 2, 3};
+    int[] expectedArr = {3, 1, 2};
+    int[] result = arrayRotator.rotate(arr, 4);
+    assertArrayEquals(expectedArr, result);
+  }
+
+  // TODO FIXME gives out of bounds exception
+  @Test
   public void rotateSingleElementArray() {
 
     int[] arr = {1};
