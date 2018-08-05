@@ -62,7 +62,6 @@ public abstract class ArrayRotatorTestBase {
     assertArrayEquals(expectedArr, result);
   }
 
-  // TODO FIXME gives out of bounds exception
   @Test
   public void rotateSingleElementArray() {
 

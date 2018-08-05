@@ -4,12 +4,10 @@ import static java.lang.Math.abs;
 
 public abstract class ArrayRotator {
 
-  abstract int[] rotate(int arr[], int steps);
+  abstract int[] rotate(int nums[], int k);
 
   /**
-   *
    * @param m - number to return modulus for
-   * @param n
    * @return m mod(n)
    */
   int mod(int m, int n) {
