@@ -2,6 +2,7 @@ package com.github.dhiraj072.leetcode.solutions.arrays;
 
 import static org.junit.Assert.assertArrayEquals;
 
+import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,7 +24,7 @@ public abstract class ArrayRotatorTestBase {
     int[] arr = {1, 2, 3, 4, 5, 6, 7};
     int[] expectedArr = {5, 6, 7, 1, 2, 3, 4};
     int[] result = arrayRotator.rotate(arr, 3);
-    assertArrayEquals(expectedArr, result);
+    assertArrayEquals("Result array: " + Arrays.toString(result), expectedArr, result);
   }
 
   @Test
@@ -69,5 +70,14 @@ public abstract class ArrayRotatorTestBase {
     int[] expectedArr = {1};
     int[] result = arrayRotator.rotate(arr, 7);
     assertArrayEquals(expectedArr, result);
+  }
+
+  @Test
+  public void rotateStepInMiddleEvenElements() {
+
+    int[] arr = {1, 2, 3, 4, 5, 6};
+    int[] expectedArr = {5, 6, 1, 2, 3, 4};
+    int[] result = arrayRotator.rotate(arr, 2);
+    assertArrayEquals("Result array: " + Arrays.toString(result), expectedArr, result);
   }
 }
