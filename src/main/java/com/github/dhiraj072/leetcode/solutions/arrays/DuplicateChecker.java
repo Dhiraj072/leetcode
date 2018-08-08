@@ -4,10 +4,10 @@ import java.util.HashMap;
 
 class DuplicateChecker {
 
-  boolean containsDuplicate(int[] arr) {
+  boolean containsDuplicate(int[] nums) {
 
     HashMap<Integer, Boolean> elementPresent = new HashMap<>();
-    for (int num : arr) {
+    for (int num : nums) {
 
       if (elementPresent.containsKey(num)) {
 
