@@ -7,6 +7,7 @@ class SetPrimeNumbersCounter implements PrimeNumbersCounter {
 
   public int count(int n) {
 
+    System.out.println("Count set");
     Set<Integer> primes = new HashSet<>();
     for (int i = 2; i < n; ++i) {
 
