@@ -59,4 +59,37 @@ public class BinaryTreeValidatorTest extends BinaryTreeTestBase {
     root = generateBinaryTree(initArr);
     assertTrue(validator.validate(root));
   }
+
+  @Test
+  public void treeIsInvalidThreeEqualNodes() {
+
+    int initArr[] = {1, 1, 1};
+    root = generateBinaryTree(initArr);
+    assertFalse(validator.validate(root));
+  }
+
+  @Test
+  public void treeIsInvalidTwoEqualNodes() {
+
+    int initArr[] = {-2, -2};
+    root = generateBinaryTree(initArr);
+    assertFalse(validator.validate(root));
+  }
+
+  @Test
+  public void treeIsValidBigInt() {
+
+    int initArr[] = {-2147483647, -2147483648};
+    root = generateBinaryTree(initArr);
+    assertTrue(validator.validate(root));
+  }
+
+  @Test
+  public void treeIsInvalidBigInt() {
+
+    int initArr[] = {-2147483648, -2147483648};
+    root = generateBinaryTree(initArr);
+    assertFalse(validator.validate(root));
+  }
+
 }

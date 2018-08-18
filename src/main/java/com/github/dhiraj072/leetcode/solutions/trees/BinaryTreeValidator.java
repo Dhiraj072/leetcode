@@ -4,22 +4,26 @@ class BinaryTreeValidator {
 
   boolean validate(BinaryTreeNode root) {
 
-    return validateBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    return validateBST(root, (long) Integer.MIN_VALUE, (long) Integer.MAX_VALUE);
   }
 
-  private boolean validateBST(BinaryTreeNode root, int minValAllowed,
-      int maxValAllowed) {
+  private boolean validateBST(BinaryTreeNode root, long minValAllowed,
+      long maxValAllowed) {
 
     if (root == null) {
 
       return true;
-    } else if (!(root.val >= minValAllowed) || !(root.val <= maxValAllowed)) {
-
-      return false;
     } else {
 
-      return validateBST(root.left, minValAllowed, root.val - 1) &&
-          validateBST(root.right, root.val + 1, maxValAllowed);
+      long rootVal = (long) root.val;
+      if (!(rootVal >= minValAllowed) || !(rootVal <= maxValAllowed)) {
+
+        return false;
+      } else {
+
+        return validateBST(root.left, minValAllowed, rootVal - 1) &&
+            validateBST(root.right, rootVal + 1, maxValAllowed);
+      }
     }
   }
 }
