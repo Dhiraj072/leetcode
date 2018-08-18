@@ -5,12 +5,12 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-class PrimeNumbers {
+class SetPrimeNumbersCounter implements PrimeNumbersCounter {
 
   private static final Logger LOGGER =
-      LoggerFactory.getLogger(PrimeNumbers.class);
+      LoggerFactory.getLogger(SetPrimeNumbersCounter.class);
 
-  int count(int n) {
+  public int count(int n) {
 
     Set<Integer> primes = new HashSet<>();
     for (int i = 2; i < n; ++i) {

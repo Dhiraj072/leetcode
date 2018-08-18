@@ -2,11 +2,20 @@ package com.github.dhiraj072.leetcode.solutions.math;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
-public class PrimeNumbersTest {
+public abstract class PrimeNumbersCounterTest {
 
-  private PrimeNumbers primeNumbers = new PrimeNumbers();
+  private PrimeNumbersCounter primeNumbers = new SetPrimeNumbersCounter();
+
+  @Before
+  public void init() {
+
+    primeNumbers = createPrimeNumbersCounter();
+  }
+
+  abstract PrimeNumbersCounter createPrimeNumbersCounter();
 
   @Test
   public void countPrimesSimpleOne() {
