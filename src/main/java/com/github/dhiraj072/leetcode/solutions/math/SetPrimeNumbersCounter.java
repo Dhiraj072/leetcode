@@ -2,13 +2,8 @@ package com.github.dhiraj072.leetcode.solutions.math;
 
 import java.util.HashSet;
 import java.util.Set;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 class SetPrimeNumbersCounter implements PrimeNumbersCounter {
-
-  private static final Logger LOGGER =
-      LoggerFactory.getLogger(SetPrimeNumbersCounter.class);
 
   public int count(int n) {
 

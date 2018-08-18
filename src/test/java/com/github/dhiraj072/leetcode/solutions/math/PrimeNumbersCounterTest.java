@@ -2,14 +2,14 @@ package com.github.dhiraj072.leetcode.solutions.math;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 public abstract class PrimeNumbersCounterTest {
 
   private PrimeNumbersCounter primeNumbers = new SetPrimeNumbersCounter();
 
-  @Before
+  @BeforeAll
   public void init() {
 
     primeNumbers = createPrimeNumbersCounter();
