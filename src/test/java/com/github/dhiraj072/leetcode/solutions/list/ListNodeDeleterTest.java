@@ -9,15 +9,13 @@ public class ListNodeDeleterTest {
 
   private ListNodeDeleter listNodeDeleter;
   private ListNode firstNode;
-  private ListTestHelper helper;
   private int initialArr[] = {1, 2, 3, 4, 5};
 
   @Before
   public void init() {
 
     listNodeDeleter = new ListNodeDeleter();
-    helper = new ListTestHelper();
-    firstNode = helper.createList(initialArr);
+    firstNode = ListTestHelper.createList(initialArr);
   }
 
   @Test
@@ -25,7 +23,7 @@ public class ListNodeDeleterTest {
 
     int expectedArr[] = {1, 2, 4, 5};
     listNodeDeleter.deleteNode(firstNode.next.next);
-    assertTrue(helper.verifyListValues(expectedArr, firstNode));
+    assertTrue(ListTestHelper.verifyListValues(expectedArr, firstNode));
   }
 
   @Test
@@ -33,7 +31,7 @@ public class ListNodeDeleterTest {
 
     int expectedArr[] = {2, 3, 4, 5};
     listNodeDeleter.deleteNode(firstNode);
-    assertTrue(helper.verifyListValues(expectedArr, firstNode));
+    assertTrue(ListTestHelper.verifyListValues(expectedArr, firstNode));
   }
 
 }
