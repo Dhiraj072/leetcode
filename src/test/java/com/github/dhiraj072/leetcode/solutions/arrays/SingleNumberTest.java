@@ -2,11 +2,23 @@ package com.github.dhiraj072.leetcode.solutions.arrays;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 
-public class SingleNumberTest {
+@TestInstance(Lifecycle.PER_CLASS)
+public abstract class SingleNumberTest {
 
-  private SingleNumber singleNumber = new SingleNumber();
+  private SingleNumber singleNumber;
+
+  @BeforeAll
+  void init() {
+
+    singleNumber = createInstance();
+  }
+
+  abstract SingleNumber createInstance();
 
   @Test
   public void testShouldReturnFour() {
