@@ -1,8 +1,8 @@
 package com.github.dhiraj072.leetcode.solutions.strings;
 
-public class FirstUniqueCharFinderArray {
+class FirstUniqueCharFinderArray {
 
-  public static int firstUniqChar(String s) {
+  static int firstUniqChar(String s) {
 
     int[] frequency = new int[26];
 
