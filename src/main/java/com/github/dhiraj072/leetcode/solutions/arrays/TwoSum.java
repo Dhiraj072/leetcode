@@ -21,7 +21,7 @@ public class TwoSum {
       sum = nums[i] + nums[j];
       if (sum == target) {
 
-        return new int[] {indexOf(origNums, nums[i]), indexOf(origNums, nums[j])};
+        return indexOf(origNums, nums[i], nums[j]);
       } else if (sum < target) {
 
         i++;
@@ -33,16 +33,18 @@ public class TwoSum {
     return null;
   }
 
-  private static int indexOf(int[] origNums, int num) {
+  private static int[] indexOf(int[] origNums, int num1, int num2) {
 
+    int[] result = new int[2];
+    int count = 0;
     for (int i = 0; i < origNums.length; ++i) {
 
-      if (origNums[i] == num) {
+      if (origNums[i] == num1 || origNums[i] == num2) {
 
-        LOGGER.info("Orig nums {} num {} index {}", origNums, num, i);
-        return i;
+        result[count] = i;
+        count++;
       }
     }
-    return -1;
+    return result;
   }
 }

@@ -2,7 +2,6 @@ package com.github.dhiraj072.leetcode.solutions.arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 
@@ -15,8 +14,6 @@ class TwoSumTest {
         TwoSum.twoSum(new int[] {2, 7, 11, 15}, 9));
   }
 
-  // FIXME
-  @Disabled
   @Test
   void testShouldReturn01TwoElements() {
 
@@ -29,5 +26,12 @@ class TwoSumTest {
 
     assertArrayEquals(new int[] {2, 3},
         TwoSum.twoSum(new int[] {-2, -3, 6, 7, 3, -1, 4}, 13));
+  }
+
+  @Test
+  void testDuplicateElementArrayShouldReturn34() {
+
+    assertArrayEquals(new int[] {2, 3},
+        TwoSum.twoSum(new int[] {-2, -1, 1, 1, 88, 44}, 2));
   }
 }
