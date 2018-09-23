@@ -9,42 +9,42 @@ class PowerOfThreeTest {
   @Test
   void test27ShouldReturnTrue() {
 
-    assertTrue(PowerOfThree.isPowerOfThree(27));
+    assertTrue(PowerOfThree.isPowerOfThreeWithoutLoop(27));
   }
 
   @Test
   void test50ShouldReturnFalse() {
 
-    assertFalse(PowerOfThree.isPowerOfThree(50));
+    assertFalse(PowerOfThree.isPowerOfThreeWithoutLoop(50));
   }
 
   @Test
   void test3ShouldReturnTrue() {
 
-    assertTrue(PowerOfThree.isPowerOfThree(3));
+    assertTrue(PowerOfThree.isPowerOfThreeWithoutLoop(3));
   }
 
   @Test
   void test9ShouldReturnTrue() {
 
-    assertTrue(PowerOfThree.isPowerOfThree(9));
+    assertTrue(PowerOfThree.isPowerOfThreeWithoutLoop(9));
   }
 
   @Test
   void test36ShouldReturnFalse() {
 
-    assertFalse(PowerOfThree.isPowerOfThree(36));
+    assertFalse(PowerOfThree.isPowerOfThreeWithoutLoop(36));
   }
 
   @Test
   void test0ShouldReturnFalse() {
 
-    assertFalse(PowerOfThree.isPowerOfThree(0));
+    assertFalse(PowerOfThree.isPowerOfThreeWithoutLoop(0));
   }
 
   @Test
   void test1ShouldReturnTrue() {
 
-    assertTrue(PowerOfThree.isPowerOfThree(1));
+    assertTrue(PowerOfThree.isPowerOfThreeWithoutLoop(1));
   }
 }

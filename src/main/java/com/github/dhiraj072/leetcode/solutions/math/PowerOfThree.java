@@ -14,8 +14,19 @@ public class PowerOfThree {
 
         return false;
       }
-      n = n / 3;
+      if (n >= 729) {
+
+        n = n / 729;
+      } else {
+
+        n = n / 3;
+      }
     }
     return true;
+  }
+
+  static boolean isPowerOfThreeWithoutLoop(int n) {
+
+    return n > 0 && 1162261467 % n == 0;
   }
 }
