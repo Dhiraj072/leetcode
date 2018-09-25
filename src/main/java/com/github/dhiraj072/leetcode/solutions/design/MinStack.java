@@ -13,11 +13,11 @@ public class MinStack {
 
   private Stack<Integer> stack;
   private List<Integer> minUntil;
-  int min;
-  int size;
+  private int min;
+  private int size;
 
   /** initialize your data structure here. */
-  public MinStack() {
+  MinStack() {
 
     stack = new Stack<>();
     minUntil = new ArrayList<>();
@@ -25,28 +25,36 @@ public class MinStack {
     min = Integer.MAX_VALUE;
   }
 
-  public void push(int x) {
+  void push(int x) {
 
     min = Math.min(x, min);
     minUntil.add(min);
     stack.push(x);
-    LOGGER.info("MinUntil {}, Stack {}", minUntil, stack);
     size++;
+    LOGGER.info("Stack {} Minuntil {}", stack, minUntil);
   }
 
-  public void pop() {
+  void pop() {
 
     stack.pop();
     minUntil.remove(size - 1);
     size--;
+    if (size == 0) {
+
+      min = Integer.MAX_VALUE;
+    } else {
+
+      min = minUntil.get(size - 1);
+    }
+    LOGGER.info("Stack {} Minuntil {}", stack, minUntil);
   }
 
-  public int top() {
+  int top() {
 
     return stack.peek();
   }
 
-  public int getMin() {
+  int getMin() {
 
     return minUntil.get(size - 1);
   }
