@@ -36,20 +36,19 @@ public class MergeSortedArray {
       }
       LOGGER.info("nums1 {}, index {}, i {} nums2 {}, j {}", nums1, index, i, nums2, j);
     }
-    if (i < m - 1) {
+    if (i < m) {
 
-      append(nums1, index, origNums1, i);
+      append(nums1, index, origNums1, i, m);
     } else {
 
-      append(nums1, index, nums2, j);
+      append(nums1, index, nums2, j, n);
     }
   }
 
-  private static int append(int[] arr1, int startIndex, int[] arr2, int arr2Index) {
+  private static int append(int[] arr1, int startIndex, int[] arr2, int arr2Index, int mn) {
 
-    for (int i = arr2Index; i < arr2.length; ++i) {
-      int tmp = arr2[i];
-      arr1[startIndex] = tmp;
+    for (int i = arr2Index; i < mn; ++i) {
+      arr1[startIndex] = arr2[i];;
       startIndex++;
     }
     return startIndex;
