@@ -3,12 +3,12 @@ package com.github.dhiraj072.leetcode.solutions.arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MergeSortedArray {
+class ArrayMerger {
 
   private static final Logger LOGGER =
-      LoggerFactory.getLogger(MergeSortedArray.class);
+      LoggerFactory.getLogger(ArrayMerger.class);
 
-  public static void merge(int[] nums1, int m, int[] nums2, int n) {
+  static void merge(int[] nums1, int m, int[] nums2, int n) {
 
     int[] origNums1 = nums1.clone();
     int i = 0;
