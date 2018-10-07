@@ -1,5 +1,6 @@
 package com.github.dhiraj072.leetcode.solutions.list;
 
+import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,8 +32,53 @@ final class ListTestHelper {
       prevNode.next = node;
       prevNode = node;
     }
-
     return firstNode;
+  }
+
+  static ListNode createCyclicList(int[] arr) {
+
+    ListNode head = createList(arr);
+    if (head == null) {
+
+      return head;
+    }
+    ListNode current = head;
+    while (current.next != null) {
+
+      current = current.next;
+    }
+    current.next = head;
+    return head;
+  }
+
+  static ListNode createCyclicList(int[] arr, int cycleAt)
+      throws InvalidArgumentException {
+
+    ListNode head = createList(arr);
+    if (head == null) {
+
+      return head;
+    }
+    ListNode current = head;
+    ListNode cycleAtNode = null;
+    int node = 0;
+    while (current.next != null) {
+
+      if (node == cycleAt) {
+
+        cycleAtNode = current;
+      }
+      current = current.next;
+      node++;
+    }
+    if (cycleAtNode == null) {
+
+      throw new InvalidArgumentException(new String[]{
+          "Invalid value for cycleAt: " + cycleAt
+              + ". The corresponding node is null"});
+    }
+    current.next = cycleAtNode;
+    return head;
   }
 
   static boolean verifyListValues(int[] expectedArr, ListNode node) {
