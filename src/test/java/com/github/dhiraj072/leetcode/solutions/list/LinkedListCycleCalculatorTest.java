@@ -2,7 +2,6 @@ package com.github.dhiraj072.leetcode.solutions.list;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.junit.jupiter.api.Test;
 
 class LinkedListCycleCalculatorTest {
@@ -50,7 +49,7 @@ class LinkedListCycleCalculatorTest {
   }
 
   @Test
-  void testHasCycleInMiddle() throws InvalidArgumentException {
+  void testHasCycleInMiddle() throws IllegalArgumentException {
 
     ListNode head = ListTestHelper.createCyclicList(new int[] {1, 2, 3, 4}, 1);
     assertTrue(LinkedListCycleCalculator.hasCycle(head));

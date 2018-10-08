@@ -1,6 +1,5 @@
 package com.github.dhiraj072.leetcode.solutions.list;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,7 +51,7 @@ final class ListTestHelper {
   }
 
   static ListNode createCyclicList(int[] arr, int cycleAt)
-      throws InvalidArgumentException {
+      throws IllegalArgumentException {
 
     ListNode head = createList(arr);
     if (head == null) {
@@ -73,9 +72,8 @@ final class ListTestHelper {
     }
     if (cycleAtNode == null) {
 
-      throw new InvalidArgumentException(new String[]{
-          "Invalid value for cycleAt: " + cycleAt
-              + ". The corresponding node is null"});
+      throw new IllegalArgumentException("Invalid value for cycleAt: " +
+          cycleAt + ". The corresponding node is null");
     }
     current.next = cycleAtNode;
     return head;
