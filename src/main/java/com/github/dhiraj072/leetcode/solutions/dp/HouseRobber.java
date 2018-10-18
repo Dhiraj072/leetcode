@@ -1,6 +1,16 @@
 package com.github.dhiraj072.leetcode.solutions.dp;
 
+import java.util.HashMap;
+import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class HouseRobber {
+
+  private static final Logger LOGGER =
+      LoggerFactory.getLogger(HouseRobber.class);
+
+  static Map<Integer, Integer> calculated = new HashMap<>();
 
   static int rob(int nums[]) {
 
@@ -13,6 +23,11 @@ public class HouseRobber {
 
   private static int maxSum(int[] nums, int n) {
 
+    LOGGER.info("Will compute maxSum(nums, {})", n);
+    if (calculated.containsKey(n)) {
+
+      return calculated.get(n);
+    }
     if (n == nums.length - 1) {
 
       return nums[n];
@@ -25,8 +40,11 @@ public class HouseRobber {
 
       return Math.max(nums[n] + nums[n + 2], nums[n + 1]);
     }
-    return Math.max(maxSum(nums, n + 2) + nums[n],
+    int result = Math.max(maxSum(nums, n + 2) + nums[n],
         maxSum(nums, n + 3) +  Math.max(nums[n], nums[n + 1]));
+
+    calculated.put(n, result);
+    return result;
   }
 
 }
