@@ -10,10 +10,11 @@ public class HouseRobber {
   private static final Logger LOGGER =
       LoggerFactory.getLogger(HouseRobber.class);
 
-  static Map<Integer, Integer> calculated = new HashMap<>();
+  static Map<Integer, Integer> calculated;
 
   static int rob(int nums[]) {
 
+    calculated = new HashMap<>();
     if (nums.length == 0) {
 
       return 0;
