@@ -7,7 +7,7 @@ public class BinaryTreeLevelOrderTraverser {
 
   static List<List<Integer>> result;
 
-  static List<List<Integer>> traverse(BinaryTreeNode root) {
+  static List<List<Integer>> traverse(TreeNode root) {
 
     result = new ArrayList<>();
     int level = 0;
@@ -15,7 +15,7 @@ public class BinaryTreeLevelOrderTraverser {
     return result;
   }
 
-  private static void levelTraverse(BinaryTreeNode root, int level) {
+  private static void levelTraverse(TreeNode root, int level) {
 
     if (root == null) {
 

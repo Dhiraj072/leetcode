@@ -2,12 +2,12 @@ package com.github.dhiraj072.leetcode.solutions.trees;
 
 class BinaryTreeValidator {
 
-  boolean validate(BinaryTreeNode root) {
+  boolean validate(TreeNode root) {
 
     return validateBST(root, (long) Integer.MIN_VALUE, (long) Integer.MAX_VALUE);
   }
 
-  private boolean validateBST(BinaryTreeNode root, long minValAllowed,
+  private boolean validateBST(TreeNode root, long minValAllowed,
       long maxValAllowed) {
 
     if (root == null) {

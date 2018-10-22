@@ -7,7 +7,7 @@ public class BinaryTreeSymmetricChecker {
 
   static List<List<Integer>> result;
 
-  public static boolean isSymmetric(BinaryTreeNode root) {
+  public static boolean isSymmetric(TreeNode root) {
 
     result = new ArrayList<>();
     levelTraverse(root, 0);
@@ -37,7 +37,7 @@ public class BinaryTreeSymmetricChecker {
     return true;
   }
 
-  private static void levelTraverse(BinaryTreeNode root, int level) {
+  private static void levelTraverse(TreeNode root, int level) {
 
     if (result.size() == level) {
 

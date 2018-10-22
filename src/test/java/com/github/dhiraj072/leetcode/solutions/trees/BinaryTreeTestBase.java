@@ -17,7 +17,7 @@ abstract class BinaryTreeTestBase {
    *     15   7
    *
    */
-  BinaryTreeNode generateBinaryTree(int[] arr) {
+  TreeNode generateBinaryTree(int[] arr) {
 
     if (arr.length == 0) {
 
@@ -26,7 +26,7 @@ abstract class BinaryTreeTestBase {
     return buildNode(arr, 0, 1, 2);
   }
 
-  private BinaryTreeNode buildNode(int[] arr, int nodeIndex, int leftNodeIndex,
+  private TreeNode buildNode(int[] arr, int nodeIndex, int leftNodeIndex,
       int rightNodeIndex) {
 
     if (nodeIndex >= arr.length || arr[nodeIndex] == -1) {
@@ -34,7 +34,7 @@ abstract class BinaryTreeTestBase {
       return null;
     }
 
-    BinaryTreeNode node = new BinaryTreeNode(arr[nodeIndex]);
+    TreeNode node = new TreeNode(arr[nodeIndex]);
     node.left = buildNode(arr, leftNodeIndex, 2 * (leftNodeIndex + 1) - 1,
         2 * (leftNodeIndex + 1));
     node.right = buildNode(arr, rightNodeIndex, 2 * (rightNodeIndex + 1) - 1,

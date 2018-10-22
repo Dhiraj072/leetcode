@@ -14,7 +14,7 @@ class BinaryTreeLevelOrderTraverserTest extends BinaryTreeTestBase {
   private static final Logger LOGGER =
       LoggerFactory.getLogger(BinaryTreeLevelOrderTraverserTest.class);
   List<List<Integer>> result;
-  BinaryTreeNode root;
+  TreeNode root;
 
   @AfterEach
   void after() {

@@ -10,7 +10,7 @@ public class BinaryTreeValidatorTest extends BinaryTreeTestBase {
   private BinaryTreeValidator validator =
       new BinaryTreeValidator();
 
-  private BinaryTreeNode root;
+  private TreeNode root;
 
   @Test
   public void testTreeIsNotValid() {

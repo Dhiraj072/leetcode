@@ -9,7 +9,7 @@ class BinaryTreeMaxDepthCalculator {
   private static final Logger LOGGER = LoggerFactory
       .getLogger(BinaryTreeMaxDepthCalculator.class);
 
-  int maxDepth(BinaryTreeNode root) {
+  int maxDepth(TreeNode root) {
 
     if (null == root) {
 
@@ -19,7 +19,7 @@ class BinaryTreeMaxDepthCalculator {
     return getMaxDepth(root, 1);
   }
 
-  private int getMaxDepth(BinaryTreeNode root, int level) {
+  private int getMaxDepth(TreeNode root, int level) {
 
     if (null == root.left && null == root.right) {
 

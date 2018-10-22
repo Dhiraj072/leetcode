@@ -12,7 +12,7 @@ public class BinaryTreeMaxDepthCalculatorTest extends BinaryTreeTestBase {
   private static final Logger LOGGER =
       LoggerFactory.getLogger(BinaryTreeMaxDepthCalculatorTest.class);
 
-  private BinaryTreeNode root;
+  private TreeNode root;
   private BinaryTreeMaxDepthCalculator binaryTreeMaxDepthCalculator;
 
   @Before
