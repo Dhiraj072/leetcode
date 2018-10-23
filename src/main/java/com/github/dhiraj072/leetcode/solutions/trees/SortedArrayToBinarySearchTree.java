@@ -1,13 +1,18 @@
 package com.github.dhiraj072.leetcode.solutions.trees;
 
+import static com.github.dhiraj072.leetcode.utils.TreeTraverser.levelTraverse;
+
+import java.util.List;
+
 public class SortedArrayToBinarySearchTree {
 
-  public static TreeNode convert(int[] sortedArray){
+  public static List<Integer> convert(int[] sortedArray){
 
-    return binarySearch(sortedArray, 0, sortedArray.length - 1);
+    TreeNode node = binarySearchAndBuildTree(sortedArray, 0, sortedArray.length - 1);
+    return levelTraverse(node);
   }
 
-  private static TreeNode binarySearch(int[] sortedArray, int start, int end) {
+  private static TreeNode binarySearchAndBuildTree(int[] sortedArray, int start, int end) {
 
     int mid = (start + end) / 2;
     TreeNode node = new TreeNode(sortedArray[mid]);
@@ -15,8 +20,8 @@ public class SortedArrayToBinarySearchTree {
 
       return null;
     }
-    node.left = binarySearch(sortedArray, start, mid - 1);
-    node.right = binarySearch(sortedArray,mid + 1, end);
+    node.left = binarySearchAndBuildTree(sortedArray, start, mid - 1);
+    node.right = binarySearchAndBuildTree(sortedArray,mid + 1, end);
     return node;
   }
 }
