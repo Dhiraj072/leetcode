@@ -1,5 +1,8 @@
 package com.github.dhiraj072.leetcode.solutions.trees;
 
+import java.util.ArrayList;
+import java.util.List;
+
 abstract class BinaryTreeTestBase {
 
   /**
@@ -41,5 +44,26 @@ abstract class BinaryTreeTestBase {
         2 * (rightNodeIndex + 1));
 
     return node;
+  }
+
+  static List<Integer> traverseResult;
+
+  static List<Integer> depthTraverseBinaryTree(TreeNode node) {
+
+    traverseResult = new ArrayList<>();
+    depthTraverse(node);
+    return traverseResult;
+  }
+
+  private static void depthTraverse(TreeNode node) {
+
+    if (node == null) {
+
+      traverseResult.add(null);
+      return;
+    }
+    traverseResult.add(node.val);
+    depthTraverse(node.left);
+    depthTraverse(node.right);
   }
 }
