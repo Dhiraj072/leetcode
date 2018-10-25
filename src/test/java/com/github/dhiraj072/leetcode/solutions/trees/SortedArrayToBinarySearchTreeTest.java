@@ -25,4 +25,32 @@ class SortedArrayToBinarySearchTreeTest extends BinaryTreeTestBase {
     assertEquals(Arrays.asList(3, 1, 5, null, 2, 4, 6),
         SortedArrayToBinarySearchTree.convert(new int[] {1, 2, 3, 4, 5, 6}));
   }
+
+  @Test
+  void  tesArrayToTreeTwoNodes() {
+
+    assertEquals(Arrays.asList(1, null, 2),
+        SortedArrayToBinarySearchTree.convert(new int[] {1, 2}));
+  }
+
+  @Test
+  void testArrayToTreeThreeNodes() {
+
+    assertEquals(Arrays.asList(-2, -3, -1),
+        SortedArrayToBinarySearchTree.convert(new int[] {-3, -2, -1}));
+  }
+
+  @Test
+  void testArrayToTreeSingleNode() {
+
+    assertEquals(Arrays.asList(1),
+        SortedArrayToBinarySearchTree.convert(new int[] {1}));
+  }
+
+  @Test
+  void testArrayToTreeZeroNodes() {
+
+    assertEquals(Arrays.asList(),
+        SortedArrayToBinarySearchTree.convert(new int[] {}));
+  }
 }
