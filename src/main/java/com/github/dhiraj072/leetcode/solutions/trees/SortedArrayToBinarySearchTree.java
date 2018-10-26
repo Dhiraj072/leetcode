@@ -1,20 +1,14 @@
 package com.github.dhiraj072.leetcode.solutions.trees;
 
-import static com.github.dhiraj072.leetcode.utils.TreeTraverser.levelTraverse;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class SortedArrayToBinarySearchTree {
 
-  public static List<Integer> convert(int[] sortedArray){
+  public static TreeNode convert(int[] sortedArray){
 
     if (sortedArray.length == 0) {
 
-      return new ArrayList<>();
+      return null;
     }
-    TreeNode node = binarySearchAndBuildTree(sortedArray, 0, sortedArray.length - 1);
-    return levelTraverse(node);
+    return binarySearchAndBuildTree(sortedArray, 0, sortedArray.length - 1);
   }
 
   private static TreeNode binarySearchAndBuildTree(int[] sortedArray, int start, int end) {

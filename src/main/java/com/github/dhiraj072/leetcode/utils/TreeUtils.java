@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class TreeTraverser {
+public class TreeUtils {
 
   private static List<Integer> traverseResult;
 
@@ -61,5 +61,36 @@ public class TreeTraverser {
   public static boolean isLeafNode(TreeNode node) {
 
     return node.left == null && node.right == null;
+  }
+
+  public static boolean isBinarySearchTree(TreeNode node) {
+
+    return traverseAndValidate(node);
+  }
+
+  private static boolean traverseAndValidate(TreeNode node) {
+
+    if (node == null || isLeafNode(node)) {
+
+      return true;
+    }
+    if (!isValidBinaryTreeNode(node)) {
+
+      return false;
+    }
+    return traverseAndValidate(node.left) && traverseAndValidate(node.right);
+  }
+
+  private static boolean isValidBinaryTreeNode(TreeNode node) {
+
+    if (node.left != null && node.left.val > node.val) {
+
+      return false;
+    }
+    if (node.right != null && node.right.val < node.val) {
+
+      return false;
+    }
+    return true;
   }
 }
