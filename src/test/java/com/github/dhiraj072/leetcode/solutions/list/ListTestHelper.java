@@ -81,15 +81,17 @@ final class ListTestHelper {
 
   static boolean verifyListValues(int[] expectedArr, ListNode node) {
 
+    int index = 0;
     for (int num : expectedArr) {
 
       if (node.val != num) {
 
         LOGGER
-            .info("Unmatched values - Expected: {} Actual: {}", num, node.val);
+            .info("Unmatched values at index {} - Expected: {} Actual: {}", index, num, node.val);
         return false;
       }
       node = node.next;
+      index++;
     }
     return true;
   }
