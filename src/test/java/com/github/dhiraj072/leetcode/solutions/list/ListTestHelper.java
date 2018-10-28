@@ -1,5 +1,7 @@
 package com.github.dhiraj072.leetcode.solutions.list;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,20 +81,34 @@ final class ListTestHelper {
     return head;
   }
 
-  static boolean verifyListValues(int[] expectedArr, ListNode node) {
+  static boolean verifyListValues(int[] expectedArr, ListNode head) {
 
     int index = 0;
+    ListNode node = head;
     for (int num : expectedArr) {
 
       if (node.val != num) {
 
-        LOGGER
-            .info("Unmatched values at index {} - Expected: {} Actual: {}", index, num, node.val);
+        LOGGER.info("Unmatched values at index {}", index);
+        LOGGER.info("Expected {}", expectedArr);
+        LOGGER.info("Actual {}", traverseList(head));
         return false;
       }
       node = node.next;
       index++;
     }
     return true;
+  }
+
+  private static List<Integer> traverseList(ListNode head) {
+
+    List<Integer> actualArr = new ArrayList<>();
+    ListNode currentNode = head;
+    while (currentNode.next != null) {
+
+      actualArr.add(currentNode.val);
+      currentNode = currentNode.next;
+    }
+    return actualArr;
   }
 }
