@@ -5,7 +5,7 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "classpath:features")
+@CucumberOptions(features = "classpath:features", tags = {"@Smoke", "~@Ignore"})
 public class CucumberTestRunner {
 
 }
