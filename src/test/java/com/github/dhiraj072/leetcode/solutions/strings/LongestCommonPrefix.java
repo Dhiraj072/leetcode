@@ -1,8 +1,5 @@
 package com.github.dhiraj072.leetcode.solutions.strings;
 
-/**
- * This has too many special cases, TODO find a better way!
- */
 class LongestCommonPrefix {
 
   String getLongestCommonPrefix(String[] strs) {
