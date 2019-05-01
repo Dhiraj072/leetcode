@@ -35,8 +35,6 @@ public class MaxSubArrayTest {
     assertEquals(1, maxSubArray.maxSubArray(new int[]{1}));
   }
 
-  // TODO Fix this
-  @Disabled
   @Test
   void testMaxSubArrayTwoElementsShouldReturnMinusOne() {
 
