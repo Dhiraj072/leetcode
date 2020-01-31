@@ -1,9 +1,9 @@
 package com.github.dhiraj072.leetcode.solutions.list;
 
-class ListNode {
+public class ListNode {
 
-  int val;
-  ListNode next;
+  public int val;
+  public ListNode next;
 
   ListNode(int x) {
 
